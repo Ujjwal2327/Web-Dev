@@ -1,0 +1,41 @@
+must do
+    participate and interect as much as you can
+    make your own extra project on every technology after lectures and upload them on github
+    dont think you are being ignored in lectures
+    dont interrupt in first explaination of any topic in lectures
+    completing the course is very important
+    at the time of lecture, understand the concepts thoroughly, dont make notes or write compared
+        after lecture, make notes, write code and make an extra project
+    at the time of lecture, focus on understanding and if you know the answers, you can comment too, but focus on undertanding the concepts and fundamentals
+
+about course
+    classes - TTSS
+    TTS - love bhaiya       concepts, projects
+    Sun - lakshya bhaiya    reverse engineering, doubts & discuss
+    weekly
+        mcqs, polls, homeworks, debugging exercises
+    TA windows for doubt solving
+    placement support 
+    confused emoji if doubt
+    more focus on technologies then UX UI
+
+how to solve doubt
+    first solve yourself
+    then discuss with batchmates
+    then ask with bhaiya
+
+communication channel
+    discord - main communication channel
+    telegram channel - for announcements
+    lovebabbar3@gmail.com
+
+
+must skills
+    debugging skills
+    googling skills / understanding documentation
+    make more projects from scratch till you are not confused anymore
+    in dev, practice as much as you can, make projects as more as you can
+
+
+Suggestion
+    add timestamp in videos so that we can know which video has which topics at the time of revision

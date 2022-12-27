@@ -1,0 +1,267 @@
+love babbar bhaiya contacts
+    lovebabbar3@gmail.com
+
+version control
+    make different versions to go back / undo or redo
+    OS does version control so that we can undo or redo things
+    provides total development freedom
+        can tell what changes are done by which developer at what time 
+    track all changes
+    saves save points using commit
+    eg. OS, git
+
+git - version control tool
+github - git repositories hosting service like yt is video hosting service
+         peoper can access repo over the web
+repository - folder on which git can watch / track
+             folder with .git folder
+
+cmd commands
+    git config --version
+    git config --list
+    git config --get user.name
+
+terminal commands
+    pwd                                         to watch the current directory
+    
+    cd                                          change directory
+    
+    ls                              l           ist all files and directories in the current directory
+    
+    git status                                  status of current repo
+    
+    git init                                    convert normal folder to repo
+    
+    clear                                       cleae the terminal
+    
+    cd..                                        to came out of the folder
+    
+    git clone url folderNname                   to clone any git repo
+    
+    git diff                                    shows the changes made in all files present in working directory
+    
+    git diff sha_id                             shows the changes made in all files with respect to that commit
+
+    git diff HEAD                               shows the changes made in all files with respect to head pointing commit
+
+    git diff file_name                          shows changes made in that file
+    
+    git log                                     shows all commits in the original git repo that is on github in reverse cronological order
+                                                same history can be seen in commit button in repo in github
+                                                press enter to watch more history
+    
+    q                                           to came outside and not want to watch all data
+    
+    git log -3                                  shows 3 latest commits      can be done for any digit
+    
+    git log -p                                  hows all commits as well as changes too (as in git diff)
+    
+    git log --oneline                           shows all git commit sha ids and messages
+    
+    git log --stat                              shows all file names that are modified in all commits in reverse cronological order
+                                                shows number of lines and files insert and delete in each commit
+    
+    git show sha_id                             shows all changes in a perticular commit
+    
+    mkdir directory_name                        to make new directory / folder
+    
+    git add                                     add new file to track or put old file to staging area
+    
+    git add . (NOT RECOMMANDED)                 add all modified files in staging area
+    
+    git commit -m "message"                     commit all changes from staging area to repo
+    
+    git commit -am "message"                    move old file to staging index and commit that
+    
+    git restore file_name                       restore that file to the head / to the latest commit
+
+    git branch                                  show all branches
+
+    git branch branch_name                      to make new branch
+
+    git checkout branch_name                    switch to that branch from current branch
+
+    git checkout -b branch_name                 make new branch inside current branch and move to that branch too
+
+    git merge branch_name                       merge that branch with current branch
+
+    git branch -d branch_name                   to delete that branch
+
+    git tag -a tag_name sha_id -m "message"     tag that branch
+
+    git tag -d tag_name                         remove that particular tag
+
+    git pull                                    update from remote repo to your local repo
+
+    git stash                                   save temp changes from working directory to stash area
+
+    git stash list                              list all stashes in reverse cronologicalorder
+
+    git stash apply                             to unstash latest temp changes from stash area to working directory 
+
+    git push -u origin master                   update from your local repo to remote repo
+
+    git revert sha_id                           revert that commit, but new and reverted commit are saved in git log
+        esc + :wq + enter                       head will be on the latest commit (in which revert action is done)
+                                                
+
+    git reset --soft sha_id                     head will move to that commit
+                                                and all above commits will get deleted
+
+    git commit --amend                          amend / change the most_recent_commit/head message/description 
+        i                                       to insert
+        enter new message                       change message to new one
+        esc + :wq + enter
+
+    git config --list
+
+    rm file_name --cached                       to remove that file from working directory
+    
+    git rm file_name --cached                   to remove that file from staging index and back to working directory
+
+
+.git
+    have metadata of git repo
+
+
+life cycle of a change
+    3 areas in git repo
+        working directory   temp changes / modified files
+        staging index       about to commit changes
+        repo                final committed changes
+    commands
+        git add             all files go from working directory to staging index
+        git commit          final / permanent change and all files go from staging index to repo
+    way to commit
+        with new commit hash / sha id
+    
+    
+head
+    points to the most recent / latest commit
+    points to the top of the stack
+
+
+how to ignore / untrack any pattern file from git
+    make a new file named .gitignore in that directory
+    
+    write *.txt                 in .gitignore to ignore all txt files
+    write file_name             in .gitignore to ignore only that file
+    write folder_name/file_name in .gitignore to ignore only that file in that folder
+
+
+if in merging branches, conflict occurs
+    resolve conflict by editing manually in files
+    git add those files
+    then git commit
+
+tagging
+    tag a particular commit
+    one tag_name can only applied to one commit
+
+
+remote repo
+    repo on github
+
+
+git stash
+    if you clone a remote repo and make changes in it in WORKING DIRECTORY
+        and there are also new changes in remote repo too in same file
+      then acc to git, remote is latest and truth
+    then when you do git pull your local repo to remote repo BEFORE git add,
+        it will show error
+    then you can do one of 2 actions
+        either use git restore
+            remove temp changes from working directory
+        or use git commit
+            commit your local changes
+            and then pull
+            and resolve merge conflicts manually
+            git add
+            git commit
+        or use git stash
+            move / save your local files with temp changes from working directory to git stash area
+            now your working directory is empty
+            now git pull and latest (remote) changes will be in working directory
+            now use git stash apply command and move your local files from stash area to working directory
+            now there may be merge conflicts that you have to resolve them
+                updated upstream
+                    that come from remote
+                stashed changes
+                    that are from your local stash area
+            git add
+            git commit
+
+
+good practice for commit
+    master code is super stable
+    so  make new branch 
+        and the commit there
+        and then after completion merge that final working branch to master
+
+
+origin
+    base root of your repo
+
+
+git push
+    for git push, you have to authenticate yourself
+
+
+undo commits
+    rarely and not a good practice
+    
+git reset
+    most dengerous command
+    need permissions in corporates to use that
+
+    git reset --soft sha_id
+        changes in working directory will show as staged (move to staging index)
+
+    git reset --mixed sha_id
+        changes in working directory will intact
+
+    git reset --hard sha_id
+        changes in working directory also get discard / deleted
+        completely avoid that
+
+
+push a commit on github
+    make github account
+    create empty repo
+    set username and email in your local system
+        git config --global user.name "Ujjwal2327"
+        git config --global user.email "ujjwal2327@gmail.com"
+    create a new repository on the command line
+        echo "# temp" >> README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/Ujjwal2327/temp.git
+        git push -u origin main
+    …or push an existing repository from the command line
+        git remote add origin https://github.com/Ujjwal2327/temp.git
+        git branch -M main
+        git push -u origin main
+    …or import code from another repository
+        You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+    git push -u origin master can give error
+            username- Ujjwal2327
+            password- tokken from github
+
+
+README.md
+    tells the descriptive text of repo
+
+
+gihub desktop video
+
+
+doubts
+    how to add / push submodules in a repo
+        https://devconnected.com/how-to-add-and-update-git-submodules/
+        https://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository
+
+    how to go to particular sha_id commit in a branch
+    
+    how to delete all changes from working directory
