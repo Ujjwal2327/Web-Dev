@@ -1,0 +1,14 @@
+Pre-requisites Git & GitHub
+    how to add / push submodules in a repo
+        https://devconnected.com/how-to-add-and-update-git-submodules/
+        https://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository
+
+    how to go to particular sha_id commit in a branch
+    
+    how to delete all changes from working directory
+
+
+HTML Basics 2
+    homework2.html
+        equal XPath and XSL Formatting Objects
+

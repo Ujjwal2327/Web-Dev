@@ -1,6 +1,3 @@
-love babbar bhaiya contacts
-    lovebabbar3@gmail.com
-
 version control
     make different versions to go back / undo or redo
     OS does version control so that we can undo or redo things
@@ -26,7 +23,7 @@ terminal commands
     
     cd                                          change directory
     
-    ls                              l           ist all files and directories in the current directory
+    ls                                          list all files and directories in the current directory
     
     git status                                  status of current repo
     
@@ -107,6 +104,13 @@ terminal commands
 
     git reset --soft sha_id                     head will move to that commit
                                                 and all above commits will get deleted
+                                                changes in working directory will show as staged (move to staging index)
+
+    git reset --mixed sha_id                    changes in working directory will intact
+
+    git reset --hard sha_id                     changes in working directory also get discard / deleted
+                                                completely avoid that
+
 
     git commit --amend                          amend / change the most_recent_commit/head message/description 
         i                                       to insert
@@ -209,20 +213,11 @@ git push
 
 undo commits
     rarely and not a good practice
-    
-git reset
-    most dengerous command
-    need permissions in corporates to use that
-
-    git reset --soft sha_id
-        changes in working directory will show as staged (move to staging index)
-
-    git reset --mixed sha_id
-        changes in working directory will intact
-
-    git reset --hard sha_id
-        changes in working directory also get discard / deleted
-        completely avoid that
+    git commit --amend
+    git revert
+    git reset
+        most dengerous command
+        need permissions in corporates to use that
 
 
 push a commit on github
@@ -255,13 +250,3 @@ README.md
 
 
 gihub desktop video
-
-
-doubts
-    how to add / push submodules in a repo
-        https://devconnected.com/how-to-add-and-update-git-submodules/
-        https://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository
-
-    how to go to particular sha_id commit in a branch
-    
-    how to delete all changes from working directory

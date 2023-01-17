@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <colgroup>
+            <!-- 1,2,3 green bg -->
+            <!-- <col span="3" style="background-color: green;"> -->
+
+            <!-- 2,3,4 red bg -->
+            <!-- <col>
+            <col span="3" style="background-color: yellow;"> -->
+
+            <!-- 2, and 4th red bg -->
+            <!-- hide column 5 and 3-->
+            <col>
+            <col style="background-color: red;">
+            <col style="visibility: collapse;">
+            <col style="background-color: red;">
+            <col style="visibility: collapse;">
+
+        </colgroup>
+
+        <tr>
+            <td>Col 1</td>
+            <td>Col 2</td>
+            <td>Col 3</td>
+            <td>Col 4</td>
+            <td>Col 5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+</body>
+</html>

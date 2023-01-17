@@ -1,0 +1,76 @@
+mdn docs & w3school     documentation
+stackoverflow
+chatgpt
+netify
+
+html
+css
+js
+full-stack application
+tags    tells browser how to render different elements
+element
+    opening tag
+    content
+    closing tag
+    empty / self-closing / void tag
+comment
+text elements
+    block elements      divide the content in diff sections
+    inline elements     to differentiate specific part of text
+id      particular name given to element
+tag
+    h1
+    p
+    div
+    br
+    list
+        ul
+        ol
+        dl
+    li
+    img
+    !DOCTYPE
+    html
+        head
+            title
+            meta
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body
+    link
+    pre
+    colgroup
+    col
+    blockquote
+    q
+    cite
+    figcaption
+    section
+    article
+    aside
+    figure
+    figcaption
+    header
+    footer
+    nav
+    main
+
+attribute       property
+    id
+    class
+    src="path"
+    alt="alternative text"
+    href
+    width
+    height
+    charset="UTF-8"
+    target="_blank"
+    colspan
+    rowspan
+    cite
+    
+sementic tags
+
+dom
+
