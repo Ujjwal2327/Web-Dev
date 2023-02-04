@@ -1,0 +1,152 @@
+HTML    description     what content will appear
+CSS     appearance      how will the content appear
+
+selector{
+    property:value;
+}
+
+element / tag / type selector
+    element{
+        property:value;
+    }
+
+<style> tag
+
+class selector
+    .class{
+        property:value;
+    }
+
+table>tr*3>td*2>{abcd}
+
+id selector
+    #id{
+        property:value;
+    }
+
+pseudoclass selector
+    selector:pseudoclass{
+        property:value;
+    }
+
+multiple / grouping selector
+
+inline
+internal
+external
+
+specificity
+!important > inline > id > class > element selector
+
+.anything#anything2
+    <div class="anything" id="anything2"></div>
+
+box-model
+    margin
+        border
+            padding
+                content
+                    height and width
+
+color
+    hexadecimal color   #rrggbb
+    rgba color          rgb(r, g, b, a)
+    colour name
+
+box-sizing
+    boxsizing:border-box    content strink but same box
+    without                 content remains same but expanded box
+
+unit in CSS
+    px      CSS (1/96 of an inch) and Hardware px are diff things
+    %       % of immediate parent property
+    em      times relative to immediate parent dimension
+    rem     times relative to root element / html element dimension
+    vw      1/100 of width of viewport
+    vh      1/100 of height of viewport
+
+gradient
+    linear
+    radial
+    conical
+
+text-shadow
+
+box-shadow
+
+css dimension properties
+    width
+    height
+
+overflow
+
+position
+    static
+    relative        relative to its normal position
+    fixed           fixed relative to viewport
+    absolute        relative to nearest position ancestor or body (is there is no such ancestor)        used for overlapping
+    sticky          toggle between relative and fixed
+
+flexbox
+    flex
+    main-axis       horizontal by default
+    croxx-axis      vertical by default
+
+flex-container
+    flex-direction
+    flex-wrap
+    flex-flow
+    justifly-content    align all items along the main axis
+    align-item          by default stretch      align along the cross-axis     apply individually in a row in all row items
+    gap                 gap between flex-items
+    align-content       to handle spacing between multiple rows / along cross axis      apply in all rows
+
+flex-item
+    order               by default 0
+    flex-grow           by default 0
+    flex-shrink         by default 1
+    flex-basis          width of flex-item but overflow content increase the width / responsive wrt overflow content
+    flex                order grow shrink basis
+    align-self          align item along the cross axis
+
+transform-style         sets whether children of an element are positioned in the 3D space or not
+
+
+flexbox     alignment / how content flows / position of content     1-D     1 dimensio n at a time
+grid        layout creation                                         2-D
+
+grid
+    grid / container
+        grid-template-columns
+        grid-template-rows
+        grid-area
+    grid items
+        grid-column-start
+        grid-column-end
+        grid-row-start
+        grid-row-end
+        grid-row
+        grid-column
+    grid line
+
+avoid use of pixels
+
+@media(breakpoint){}
+@media(breakpoint1) and (breakpoint2){}
+
+CSS functions
+    rgb()
+    rgba()
+    translate()
+    scale()
+    minmax()
+    gradient()
+    calc(expression)
+    min(a,b)
+    max(a,b)
+
+variables
+    --variableName:value;
+    var(--variableName)
+    global
+        :root:{}

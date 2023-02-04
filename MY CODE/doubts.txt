@@ -1,0 +1,38 @@
+Pre-requisites Git & GitHub
+    how to add / push submodules in a repo
+        https://devconnected.com/how-to-add-and-update-git-submodules/
+        https://stackoverflow.com/questions/8372625/git-how-to-push-submodule-to-a-remote-repository
+
+    how to go to particular sha_id commit in a branch
+    
+    how to delete all changes from working directory
+
+
+HTML Basics 2
+    homework2.html
+        equal XPath and XSL Formatting Objects
+
+
+
+CSS Basics - 1
+    margin in boxmodel/pixel.html in #div2
+
+
+
+CSS Basics - 3
+    why flex-wrap:wrap-reverse and align-items:flex-start act as align-items:flex-end
+    why flex-wrap:wrap-reverse and justify-content:flex-start act as justify-content:flex-end
+
+
+
+CSS Basics - 4
+    Parallel Website in homework
+
+
+
+AnR CLASS 1
+    template > index.html and styles.css
+
+
+jis chij pr bhaiya time nhi lgarhe, us chij pr hme bhi time nhi lgana
+

@@ -1,0 +1,11 @@
+framework   without leaving html page, use same style
+
+jis chij pr bhaiya time nhi lga rhe, us chij pr tumhe bhi time nhi lgana heading
+agr kuch beech ke topic smjh nhi aa rhe to koi dikkat nhi hain, use chodo, aage ka pdho, vahi n ruk jao
+
+always document the talking work in companies
+
+    <!-- https://codehelp-razorpay-clone.netlify.app/# -->
+
+https://dot-batch-project-assets.vercel.app/
+

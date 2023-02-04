@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#wrapper{
+    height: 100vh;
+    width: 100vw;
+    /* overflow-y: auto; */
+    overflow-x: hidden;
+    perspective: 10px;
+    background-color: rgb(47, 255, 0);
+}
+
+.container{
+    /* why */
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+    /* why */
+    /* background-color: bisque; */
+}
+
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+
+h1{
+    font-size: 8rem;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 0 0 10px rgb(0,0,0,0.3);
+    position: absolute;
+    top: 5rem;
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+
+.secHeading{
+    font-size: 3.5rem;
+    padding: 0 10rem;
+}
+
+.text{
+    font-size: 1.1rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+}

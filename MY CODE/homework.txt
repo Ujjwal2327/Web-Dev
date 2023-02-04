@@ -1,0 +1,270 @@
+HTML BASICS 1
+programming vs markup language
+    programming language
+        to produce various kinds of outputs
+    markup language
+        to annotate
+
+tags are case sensitive or not
+    no
+
+p vs div
+    If you need a generic container purely for layout purposes then use a <div>.
+    If you need an element to describe a paragraph of content then use a <p>.
+
+description list
+    <dl>
+        <dt> term </dt>
+        <dd> description </dd>
+    </dl>
+
+all html elements can have attribute?
+    yes
+
+what happens when we close an empty tag
+    a void element must not have an end tag.
+    For example, <input type="text"></input> is invalid HTML. 
+
+
+
+HTML BASICS 2
+why h1 to h6 heading tags only?
+    because it was assumed that nobody would need a sub-sub-sub-sub-sub-sub-heading
+
+make hr to red color
+    border:2px solid red;
+
+how to limit the bgcolor in a paragraph
+    width: fit-content;
+
+why strike tag is in red color in vs code
+    Deprecated: This feature is no longer recommended.
+
+read quatation and citation tags - blockquote, q, cite, address, abbr
+    done
+
+how to add a favicon
+    <link rel="icon" type="image/x-icon" href="paneer.jpg">
+
+1:16:00 homework webpage    discord question-links  — 12/29/2022 10:27 PM
+    homework2.html
+
+1:40:30 table homework
+    homework3.html
+
+2:03:35 form homework
+    homework4.html
+
+
+
+HTML BASICS 3
+56:08 table homework
+    homework1.html
+
+is there anything like rowgroup, if not, what is its alternate
+    no
+    group tr(s) tag in thead, tbody and tfoot
+    homework2.html
+
+read cheatsheet last pages
+    done
+
+make image as a hyperlink
+    homework3.html
+
+
+
+HTML BASICS 4
+div + display:inline = span?
+    act as same but different semantically
+
+span + display:block = div?
+    from the semantic point of view, if you embed block level elements inside the span, you are creating invalid HTML, because you nest a block in an inline element.
+    otherwise they act as same but different semantically
+
+can i use section in article and can i use article in section
+    yes
+
+difference between header and h1
+
+can i use footer tag in header tag
+    nope for better practices
+
+can i use multiple header tags
+    You can have several <header> elements in one HTML document. However, <header> cannot be placed within a <footer>, <address> or another <header> element.
+
+how to take any content in centre
+    homework1.html
+
+difference between body tag and main tag
+    header + main + footer = body
+
+create dom of tribute adding sementics page
+    homework2.pdf
+
+HTML Quiz
+    done
+    19/20 correct
+
+Debugging exercise
+    done
+
+
+DOUBT CLEARING SESSION
+embedd youtube video using iframe tag
+    <iframe src="http://www.youtube.com/embed/W7qWa52k-nE" frameborder="0"></iframe>
+
+add audio and video
+    homework1.html
+
+
+
+CSS BASICS - 1
+universal selector
+    *{ property:value; }
+
+nested selector / combinator
+    descendent combinator
+        parent descendent{ property:value; }
+    child combinator
+        parent > immediate_child{ property:value; }
+    adjacent sibling combinator
+        element + adjacent_element { property:value; }
+    general sibling combinator
+        element - general_sibling_element { property:value; }
+
+attribute selector
+    element[attribute] { property:value; }
+    element[attribute = "value"] { property:value; }
+
+play with margin-left, margin-right, margin-top, margin-bottom
+    homework1 margin properties.html
+
+explore font properties     font-family, font-weight, font-style, emphasis & important, how to add external fonts
+    homework2 explore font properties.html
+
+explore by insert 1000 words in a box of 100px width and height
+    homework3 explore limited box.html
+
+style tribute page using external CSS
+    homework4 tribute page.html
+    homework4 style.css
+
+1:33:33 create same card
+    homework5 web dev bootcamp card.html
+    homework5 style.css
+
+difference between 1% unit and 1vw
+    1%      relative to parent's dimension
+    1vw      relative to viewport width dimension
+
+
+
+CSS BASICS 2
+conic gradient
+    homework1 conic gradient.html
+    homework1 conic gradient.css
+
+how can we add border using shadows
+    homework2 add border using shadows.html
+    homework2 add border using shadows.css
+
+how to add spread-radius in box-shadow
+    homework3 spread radius.html
+    homework3 spread radius.css
+
+1:03:00 display text in all 4 corners and center
+    homework4 show text in all 4 corners and center.html
+    homework4 show text in all 4 corners and center.css
+
+XXXXXwhy transform property not working in inline
+
+matrix in transform
+    matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+why in rotateZ(), there is no need for perspective
+    as there is no change in perspective in rotating around z axis
+
+
+
+CSS BASICS - 3
+flex-flow
+    flex-flow:flex-direction flex-wrap;
+
+
+CSS BASICS - 4
+XXXXXis position:relative needed?
+
+XXXXXis z-index:-1 needed in container?
+
+apply external font poppins in h1
+    done using google fonts
+
+img tag vs background-image attribute
+    If the image is part of the content such as a logo or diagram or person (real person, not stock photo people) then use the <img /> tag plus alt attribute. For everything else there's CSS background images. The other time to use CSS background images is when doing image-replacement of text eg. paragraphs/headers.
+
+XXXXXhit and trial in all positions values
+
+gird-row and grid-column shorthand notations
+    grid-row:gird-row-start / grid-row-end;
+    grid-column:gird-column-start / grid-column-end;
+
+justify-content, justify-self, justify-item, align-content, align-self, align-item, place-item, place-self
+    homework2 grid properties.html
+    homework2 grid properties.css
+
+1:50:40 
+    homework1 coffee mug card.html
+    homework1 coffee mug card.css
+
+
+
+UNWRAP CLASS - CSS
+product card
+    homework1 product card folder
+
+figma
+    
+
+image gallery using grid
+
+quiz and `debugging exercise
+    
+
+
+ANR CLASS 1
+explore grid area
+
+is there any property named grid-auto-column    if not, then why
+
+difference between grid and inline-grid
+difference between block and inline-block
+
+1:28:20 homework in slides
+
+create your own layout using flex and grids together
+
+1:47:46 layout using grid 2 page application
+
+
+
+AnR CLASS 2
+difference between :root{} and *{} in using variables
+
+
+
+TAILWIND CLASS 1
+make whole razorpay ui with CSS
+
+TAILWIND CLASS 2
+on hover, svg line on 6 cards, gradient in top-right img of card and box shadow on card
+
+TAILWIND CLASS 3
+on hover, svg line on 3 box, gradient in top-right img of card and box shadow on card
+
+TAILWIND CLASS 4
+make footer
+
+TAILWIND CLASS 5
+discord site clone using tailwind
+

@@ -1,0 +1,36 @@
+.box{
+    height: 100px;
+    width: 200px;
+    border: 5px solid black;
+    /* background-color: orange; */
+    margin: 10px;
+    padding: 25px;
+    /* padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px; */
+
+    /* box-sizing */
+    box-sizing: border-box;
+}
+
+#org{
+    /* background-color: orange; */
+    
+    /* hexadecimal colors */
+    /* background-color: #357825; */
+    
+    /* hexadecimal colors */
+    /* background-color: rgb(0, 132, 255); */
+    
+    /* color name */
+    background-color: orange;
+}
+
+#wht{
+    background-color: white;
+}
+
+#grn{
+    background-color: green;
+}

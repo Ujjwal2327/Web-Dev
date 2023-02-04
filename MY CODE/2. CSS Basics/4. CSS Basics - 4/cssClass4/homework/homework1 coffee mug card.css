@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 200px 270px;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: white;
+}
+
+img{
+    width: 200px;
+    border-radius: 10px 0 0 10px;
+}
+
+.details{
+    width: 100%;
+    padding: 0 25px;
+}
+
+.title{
+    letter-spacing: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+p{
+    margin: 10px 0;
+}
+
+.desc{
+    font-size: 0.7rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.price{
+    color: rgb(165, 63, 63);
+}
+
+.new-price{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.old-price{
+    font-size: small;
+    text-decoration: line-through;
+}
+
+.add-to-cart{
+    background-color: rgba(171, 99, 54, 0.751);
+    color: white;
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    gap: 10px;
+    border-radius: 7px;
+}

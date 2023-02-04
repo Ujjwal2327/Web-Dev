@@ -1,0 +1,19 @@
+.container{
+    height: 500px;
+    width: 500px;
+    background-color: green;
+    border: 3px solid red;
+    display: flex;
+}
+
+.box{
+    border: 2px solid orange;
+    background-color: aqua;
+}
+
+
+/* 
+clock animation 1:14
+
+
+*/

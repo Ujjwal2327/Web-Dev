@@ -1,0 +1,25 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.container{
+    background-color: brown;
+    height: 500px;
+    border:3px solid black;
+    display: grid;
+    
+    grid-template-columns:  1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    gap:3px;
+
+    justify-content: center;
+}
+.box{
+    background-color: aqua;
+    border:3px solid black;
+    width:80px; 
+
+}

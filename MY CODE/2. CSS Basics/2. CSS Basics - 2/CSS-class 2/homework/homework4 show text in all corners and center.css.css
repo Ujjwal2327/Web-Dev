@@ -1,0 +1,42 @@
+.box{
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#div1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#div2{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#div3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#div4{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+}
+
+#div5{
+    margin: auto;
+}
