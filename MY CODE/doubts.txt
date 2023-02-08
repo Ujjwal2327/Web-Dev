@@ -36,3 +36,6 @@ AnR CLASS 1
 
 jis chij pr bhaiya time nhi lgarhe, us chij pr hme bhi time nhi lgana
 
+
+
+scripting lang vs programming lang
