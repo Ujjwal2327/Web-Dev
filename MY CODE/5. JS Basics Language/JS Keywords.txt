@@ -1,0 +1,316 @@
+5 startup wale ke paas jyada knowledge hoti hai as compared to 5 mnc wale
+big mnc me log km kaam krte hain as compared to startup
+
+approach janii hai q solve krne ki
+
+notes are not means for codes
+
+js engine
+
+console.log()
+seperation of concern
+variable
+let
+    global scope
+var
+    local scope to nearest code blocks {}
+    redeclaration not possible
+const
+    assignment is not defined
+variable naming conventions
+    int a,b;
+    // best practice
+        int a;
+        int b;
+
+datatypes
+    primitive
+        string
+        number
+            int, float, double, etc
+        boolean
+        Undefined (gv in C++)
+        Null (empty / no value)
+
+dynamic typing
+    datatype of a can be change
+
+reference types
+    Objects
+        multiple variables are linked, so wrap them as properties in one entity 
+    arrays
+        can also contain diff types of items too
+    functions
+
+operators
+    arithmetic
+        + - * / **(exponentiation / power)
+    
+    pre / post increament / decreament      ++a a++ --a a--
+    
+    assignment  =
+    
+    comparision
+        > < >= <=
+        equality operator
+            ===
+                strict equality
+                same datatype and value
+            ==
+                loose equality
+                can be same value only
+        !==
+    
+    ternary operator
+    
+    logical operator
+        && || !
+    logical operator with non boolean values
+        falsy
+            undefined Null 0 false NaN(Not a Number) ' '
+        anything other than falsy
+    short circuiting in or operator
+        if any is true, no need to check further    ans will be true
+    short circuiting in and operator
+        if any is false, no need to check further   ans will be false
+    
+    bitwise operator
+        &   |   ~   ^
+
+    operator precedence
+        best practice   use brackets properly
+    
+control statements
+    if-elseif-else
+    switch case
+
+loops
+    for loop
+    while loop
+    do-while loop
+        atleast execute once
+    what is an infinite loop
+    for-in loop
+    for-of loop
+
+
+
+JS BASICS - CLASS 2
+Objects
+    multiple variables ko single entity me link krdo
+    propeties   key:value,
+    and behaviour
+    object literal  {}
+    method
+    oop
+
+object creation
+    property
+    behaviour
+        method
+            function in object
+    object literal  {}
+    factory function
+        camelCaseNotation
+        request object creation (function call) and response (return) created object
+    constructor function
+        PascalNotation
+        initialize / define
+        not return any object
+        use of this and new keywords
+
+this
+    refer the corrent object
+
+new
+    to create an object 
+
+typeof() operator
+
+dynamic nature of Objects
+    object.newProp = value;
+    delete object.prop;;
+
+constructor property
+    shows how the object is made
+    object.constructor;
+
+functions are also object
+    also has properties and methods and .constructor
+
+function named Function is a constructor function of all functions 
+
+types in js
+    primitive
+        copied by their value
+    reference
+        reference datatypes are Objects (function, object, array)
+        copied by their address / reference
+        obj2 = obj1;
+        point to same object
+
+pass in function
+    primitive
+        pass by value
+    reference
+        pass by reference
+
+for in loop
+    generally in objects
+
+for of loops
+    use only in iterables
+    iterrables
+        array, map
+    can be use in object using
+        Object.keys(objectName);
+
+find whether particular property present or not in an object
+    if('propName' in objName)
+
+OBJECT CLONING  (imp)
+    iterate
+    assign
+    spread
+
+garbage collection
+    find out var / const that are not in use and deallocate their memory
+    we have no control over garbage collector
+    automatic garbage collector in js
+    run in background
+
+
+
+inbuilt objects
+    Math
+
+string
+    primitive
+    object
+        new String('Value')
+
+object literal  {}
+string literal  ''
+template literal   ``
+
+placeholder ${}
+
+date and time
+    Date()
+    getter and setter
+
+arrays
+    reference type
+    type of object
+    can store different types of items
+
+creating an array
+    let nums = ['a', 2, 'Babbar'];    
+
+index
+
+insertion
+    at start
+        arr.unshift(value);
+    at end
+        arr.push(value);
+    at middle
+        arr.splice(index, deleteCount, insertint elements);
+
+searching
+    primitive
+        arr.indexOf(value)     -1(if absent) or index(if present)
+        arr.indexOf(value, starting index to search)
+        arr.includes(value)
+    references
+            .find(callback function(object element in array as argument));
+            
+predicate / callback function / method
+    function passed into another function as an argument,
+        which is then invoked / called inside the outer function
+    method used in another method as value
+    another method result will depend on that callback function / method
+
+arrow function
+    function(parameter){
+        return body;
+    }
+        (parameter)=>{
+            return body;
+        }
+            if single parameter
+                parameter=>{
+                    return body;
+                }
+                    if single statement in function body
+                        parameter=> body
+            if no parameter
+                ()=>{
+                    return body;
+                }
+                    if single statement in function body
+                        ()=> body
+
+removing elements
+    at end
+        arr.pop();
+    at begin
+        arr.shift();
+    at middle
+        arr.splice(index, deleteCount, insertint elements);
+
+emptying an array
+    arr=[];     poblem in that
+        arr is not emptyed, just pointed to new array now
+    arr.length=0;
+    arr.splice(0, arr.length);
+    for(key of arr){
+        arr.pop();
+    }
+    while(arr.length){
+        arr.pop();
+    }
+
+combining elements
+    arr1.concat(arr2);
+
+splitting elements
+    arr.slice(starting index, ending index)
+        [starting index, ending index}
+    arr.slice(index)
+        index to upto last
+    arr.slice()
+        copy of original array
+    
+spread operator
+    combined = [...arr1, 'a', ...arr2, 'bb', true, false];
+    let arr2 = [...arr];
+        creating a copy method 2
+
+iterating in an array
+    for of loop
+        for(value of arr){}
+    for each loop
+        arr.forEach(callback function(element in array as argument));
+
+joining array
+    arr.join('joining seperator');
+
+splitting array
+    arr.split('splliting seperator')
+
+sorting array
+    arr.sort();
+    convert all elements into string an d then sort them
+
+reversing an array
+    arr.reverse();
+
+filtering in an array
+    arr.filter(callback function(element as parameter));
+
+mapping in an array
+    arr.map(callback function (element as parameter))
+    mapps each element in an array to something else
+
+channing

@@ -285,3 +285,10 @@ does falsy and truthy apply in AND
     and will give the last truthy value if all the conditions are true
 ways to make infinite loop
     https://flexiple.com/javascript/infinite-loops-javascript/
+
+
+JS BASICS - 2
+for of loop in rectangle
+combining and slicing in array having objects
+predicate function to sort an array of objects
+predicate function to sort an array of numbers ex- {5,10,4,40}
