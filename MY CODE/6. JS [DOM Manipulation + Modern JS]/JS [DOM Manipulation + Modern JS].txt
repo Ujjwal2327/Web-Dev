@@ -1,0 +1,143 @@
+window
+    global object / top level entity created by browser
+    represents a browser window
+    all other objects and everything lies inside it
+
+DOM
+    document object model
+    object representing all html code
+
+BOM
+    browser object model
+    to communicate with browser about matter other than content of page
+    ex - alert, location, history
+
+sequence of characters -> tags (if enclosed in <>) -> tokens (by tokenizer) -> nodes -> dom gets ready
+
+document.getElementById('idName')
+    returns a single object having id idName
+    called on a document object
+
+document.getElementsByClassName('className')
+    returns an HTML Collection (array like object)
+               not an array
+    returns all elements having class className
+    called on document object
+
+document.getElementsByTagName('tagName')
+    called on document object
+    returns an HTML Collection (array like object)
+               not an array
+    returns all tags named tagName
+
+$0
+    returns the last element you hover on
+    let element = $0
+    
+document.querySelector
+    document.querySelector('#idName')
+    document.querySelector('.className')
+        returns first object (element) only
+    document.querySelector('tagName')
+        returns first object (element) only
+
+document.querySelectorAll
+    document.querySelectorAll('.className')
+        returns all objects (HTML Collection)
+    document.querySelectorAll('tagName')
+        returns all objects (HTML Collection)
+
+to update existing content
+    element.innerHTML
+    element.outerHTML
+    element.textContent
+    element.innerText
+
+    element.inmerHTML
+        returns all HTML content inside that html as a text
+        returns with render (< -> &lt;)
+        to get an element and all of its descendent elements HTML content
+        to set an element HTML content
+
+    element.outerHTML
+
+    element.textContent
+        returns without render (tags will also be treated as text)
+        will also return elements having display hidden
+
+    element.innerText
+        returns without render (tags will also be treated as text)
+        will not return elements having display hidden
+
+creating a new element
+    document.createElement('tagname')
+        to create new element
+        let newPara = document.createElement(p);
+    
+adding new element
+    element.append(element2);
+        add element2 at the end inside element
+
+creating a text node
+    document.createTextNode('text');
+
+inserting element2 having text 'text' in element 
+    not good way
+        element2 = document.createElement('tagName');
+        str = document.createTextNode('text');
+        element2.append(str);
+        element.append(element2);
+    good way
+        alternate of createTextNode
+        element2 = document.createElement('tagName');
+        element.textContent = 'text';
+        element.append(element2);
+
+insert element2 in element in any position
+    element.insertAdjacentElement('where', element2);
+        where->     beforeBegin    afterBegin    beforeEnd    afterEnd
+
+to find parentElement
+    parentElement = childElement.parent;
+
+delete childElement in parentElement in any position
+    parentElement.removeChild(childElement);
+    
+    if parentElement is not known
+    (childElement.parent).remove(childElement);
+
+    
+css specificity
+    inline > 
+
+access style of an element
+    element.style.attribute = 'value';
+        content.style.backgroundColor = 'green';
+    can style only 1 property at a time
+
+element.style.cssText
+    content.style.cssText = 'color:green; background-color:yellow; font-size:4em;';
+    can style multiple properties at a time
+
+element.setAttribute('attribute', 'value');
+    to set attribute name
+    element.setAttribute('style', 'color:green; background-color:yellow; font-size:4em;');
+    element.setAttribute('id', 'newIdName');
+
+element.className
+    returns a string containing all classes and seperated by a space
+    let str = element.className;
+    let obj = element.className.trim().split(' ');
+
+element.classList
+    let obj = element.classList;
+    returns a object containing all classes
+    methods in element.classList
+        add();
+        remove();
+        toggle();               add if not present, remove if already present
+        contains();             returns true if present, false otherwise
+
+
+monitorEvents();
+unmonitorEvents();

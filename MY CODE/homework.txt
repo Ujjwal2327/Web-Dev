@@ -269,13 +269,16 @@ TAILWIND CLASS 5
 discord site clone using tailwind
 
 
-JS BASICS - CLASS - 1
+
+
+JS BASICS - CLASS 1
 scripting lang vs programming lang
     https://www.google.com/url?sa=i&url=https%3A%2F%2Fpediaa.com%2Fwhat-is-the-difference-between-scripting-language-and-programming-language%2F&psig=AOvVaw2RDNCXnALp34J1e6Sp0LJa&ust=1675880204806000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLiZl7SChP0CFQAAAAAdAAAAABAI
 can we use browser console without internet
     yes
 similarity and difference between java and javascript
     https://www.eviltester.com/2018/05/some-similarities-between-java-and-javascript.html#similarities
+is redclaration possible in var
 log vs print
     PrintIn prints the text to the console while console. log prints any variables with strings that have been coded before.
 why strike in 'status' as variable name
@@ -287,8 +290,15 @@ ways to make infinite loop
     https://flexiple.com/javascript/infinite-loops-javascript/
 
 
-JS BASICS - 2
-for of loop in rectangle
+JS BASICS - CLASS 3
 combining and slicing in array having objects
 predicate function to sort an array of objects
 predicate function to sort an array of numbers ex- {5,10,4,40}
+
+
+JS BASICS - CLASS 4
+finally block in try and catch error
+
+
+DOM - CLASS 1
+.outerHTML
