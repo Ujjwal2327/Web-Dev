@@ -1,0 +1,96 @@
+react
+    js library for UI creation
+    component based architecture
+    making components
+    JUST KEEP IN MIND, DONT TELL THIS TO INTERVIEWER
+        creating custom HTML element by this 
+    js is based on imperative approach (have to tell eveything step by step in detail)
+    react is based on declarative approach, you have to tell only its end state
+    for SPA
+
+
+library
+    segment of code having many functionalities that can be called by user
+
+magicak line on react
+    react is all about components (function act the end)
+
+component
+    reusable piece of code
+    fucntion king of thing
+    custom html element
+
+SPA
+    single page application
+    1 html page with dynamic changes
+
+react alternatives
+    angular
+    vue
+
+why react
+    reusability
+    DRY donot repeat yourself
+    readability
+    seperation of concern
+    mantainability
+
+documentation
+    react official documentation
+
+steps to initialise react
+    way 1
+        install node js
+        vs code
+        change a new folder ReactFolio
+        change directory to ReactFolio
+        npx create-react-app demoapp        (no capital letter)
+        change directory to demoapp
+        npm start
+
+    way 2
+        create repl of rect javascript in replit
+
+    way 3
+        tailwind wala startup pack
+            https://github.com/thepranaygupta/react-tailwind-css-starter-pack
+
+
+package.json
+    has dependecies, scripts and versions
+    actual react library made by react and react-dom package
+
+src
+    majority development you will do
+    index.js
+        first file that will execute when the html page loads
+        react makes root by fetching element with id root
+        render the App component
+    App.js / App.jsx (js xml)
+        html code inside js
+        what you want to show on UI
+        return HTML code of UI
+    index.css
+        style for index.js
+    
+public/index.html (div with id root) -> 
+    src/index.js (convert root div into react root element ->
+        render the App component (div will be replaced by App component) ->
+            App.js (render code and return) and App.css
+
+react code (user friendly) -> converted by js engine  -> converted into browser friendly code
+
+here you are coding in js -> using className, not class, because class is reserved keyword
+                                            className has same property as class in html file
+
+npm start
+    convert react code to equivalant html and js code that will be understand by browser
+
+make new component as a new file
+    with every first letter of the word capital
+
+attributes are known as props (properties)
+by default content put inside component in App.js will not be visible, you have to use {props.children}
+
+in return, return only one element (may be nested)
+

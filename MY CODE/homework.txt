@@ -300,5 +300,25 @@ JS BASICS - CLASS 4
 finally block in try and catch error
 
 
-DOM - CLASS 1
+JS [DOM MANIPULATION + MODERN JS] - CLASS 1
 .outerHTML
+
+
+JS [DOM MANIPULATION + MODERN JS] - CLASS 2
+can event listener apply at target phase
+
+JS [DOM MANIPULATION + MODERN JS] - CLASS 3
+robert philip event loop video
+
+JS [DOM MANIPULATION + MODERN JS] - CLASS 4
+classes and export modules in js
+
+
+
+JS (SERIES OF MINI PROJECT) - 1
+shadow in indicator
+
+
+REACT BASICS - CLASS 1
+props.className
+    to use css of child component

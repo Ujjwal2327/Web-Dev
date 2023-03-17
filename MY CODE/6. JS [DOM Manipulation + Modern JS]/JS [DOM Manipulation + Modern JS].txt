@@ -1,3 +1,4 @@
+JS [DOM MANIPULATION + MODERN JS] - CLASS 1
 window
     global object / top level entity created by browser
     represents a browser window
@@ -75,7 +76,7 @@ creating a new element
         let newPara = document.createElement(p);
     
 adding new element
-    element.append(element2);
+    element.appendChild(element2);
         add element2 at the end inside element
 
 creating a text node
@@ -139,5 +140,246 @@ element.classList
         contains();             returns true if present, false otherwise
 
 
-monitorEvents();
-unmonitorEvents();
+
+JS [DOM MANIPULATION + MODERN JS] - CLASS 2
+
+browser events
+    announcement
+    brouser sends the event
+
+monitorEvents(element);
+    to watch events that triggrers / fires on this element
+
+unmonitorEvents(element);
+    to stop watching events that triggrers / fires on this element
+
+interface
+    blueprint (like classes in C++)
+
+Event Target
+    top level entity (interface)
+    interface implementd by ibjects that can recieve events and may have listeners for them
+    3 methods
+        .addEventListener()
+        .removeEventListener()
+        .dispatchEvent()
+    Event Target <- node <- element
+        node is inherited by Event Target
+        node has properties of Event Target
+        element has properties of node and Event Target
+        
+eventListener
+    provide functionality for any event occuring
+
+target.addEventListener('event', function definition / functionName)
+    listen / hook into / respond to event
+    target -> to which element you want to apply listener
+    function -> define what to do when event happens
+    element.addEventListener('click', function (){
+        console.log('I clicked here');
+        element.style.background = 'red';
+    });
+
+    let content = document.querySelectorAll('p');
+    content.forEach(function (element){
+    element.addEventListener('click', function(){
+            element.style.background = 'yellow';
+        });
+    });
+
+type cohersion
+    when js will try to convert the items being compared to same type
+    1 == '1'    true
+        allows type cohersion
+    1 === '1'   true
+        prevent type cohersion
+
+target.removeEventListener('event', functionName)
+    function should be same object that applied on .addEventListener()
+    so add and remove event listeners by making seperate function outside the listeners
+    conditions to remove
+        same target
+        same type ('event')
+        same function
+
+phases of event
+    capturing phase
+        search the target
+    at target phase
+        when find out the target
+    bubbling phase
+        go back after finding the target
+        by default event listener starts here
+
+addEventListener('event', function, useCaptureValue);
+    if useCaptureValue =true
+        event listener starts from capturing phase now
+
+event object
+    has much knowledge about that event
+    when event occurs, function in addEventListener gets event object
+    content.addEventListener('click', function(event){
+        console.log(event);
+    });
+
+Default Action
+
+event.preventDefault()
+    prevents the default action of an element
+    used inside function in addEventListener
+    thirdLink.addEventListener('click', function(event){
+        event.preventDefault();
+    });
+
+event.target
+    where event occurs
+
+event.target.nodeName
+    returns string of name of node in uppercase
+
+DOM Content Loaded
+    event type when all content loaded
+
+
+
+JS [DOM MANIPULATION + MODERN JS] - CLASS 3
+
+performance.now()
+    very accurate
+    shows time taken till that line of code
+
+reflow
+    calculations after updatation in document
+    very intensive task, takes much time
+
+repaint
+    show everything pixel by pixel in your browser
+    takes less time than reflow
+
+good practice
+    less reflow and repaint
+
+document fragment
+    lightweight document object
+    no reflow and repaint while updating elements in document fragment
+    1 reflow and 1 repaint if we add this in document object
+
+
+single threading
+    process one command at a time
+    js is single threaded language
+
+nature of code of js
+    run to completion nature of code
+    doesnot execute multiple lines / functions at the same time
+
+call stack
+    stores function
+    new entry will made for every function call and remove after execution
+
+synchronous execution
+    no waiting
+    occuring immediately
+    event listener is NOT synchronous
+        jha likha hai vhi chalna start nhi hoga
+
+event loop
+    use of call stack, browser and event queue
+    simple functions -> call stack -> empty after execution
+    asynchronous code is execute using event loop 
+        (asynchronous code) event listener -> call stack -> browser handle this -> event queue (if event triggers) -> call stack (if call stack is empty) -> function in event listener will execute
+        (asynchronous code) setTimeout -> call stack -> browser handle this -> event queue (after minimum delay) -> call stack (if call stack is empty) -> function in setTimeout will execute
+    asynchronous code is handle by browser
+    watch philip robert event loop video in youtube
+        search loupe in google
+
+setTimeOut(function, minimum time delay before execution in milliseconds)
+    browser puts that function in event queue after minimum time delay
+    minimum because it is asynchronous and call stack can be filled for much time
+    setTimeout(function(){
+        console.log('Hello Everyone')
+    }, 2000);
+    console.log('hi Everyone')
+
+    if minimum time delay is 0, it will also go in the event loop, so no immediate function
+        VERY INPORTANT
+        medium article, stack overflow ans, mdn documentation, robert philip video
+            https://medium.com/swlh/playing-with-javascript-settimeout-11201cd0d0c
+        setTimeout(function(){
+            console.log('Hello Everyone')
+        }, 0);
+        used whenever you are trying to defer(talna) something until the stack is clear
+        
+
+
+
+JS [DOM MANIPULATION + MODERN JS] - CLASS 3
+VERY IMPORTANT
+
+asynchronous execution
+    ho jayega, pr pta nhi kitna time lega
+    done by event loop
+    
+API
+    application programming interface
+    mediater / connecting body between 2 softwares over network call
+    establish communication
+    get, post, put, delete call
+
+features of asynchronous code
+    clean and concise
+    better error handling
+    easier debugging
+    1 more, find out in homework
+
+promise
+    best way for parallel execution (asynchronous code) in js in background
+    time not decided
+    can handle successful and failed states
+    3 states - pending, fulfilled and rejected
+    let p = new Promise(callback-function(resolve, reject){
+        resolve(2233);
+        reject(new Error('Bhaishahab error aaye hain'));
+    });
+    resolve
+        successful execution
+    reject
+        for error throwing
+    2 methods
+        used if you want to do something after ending of execution of promise
+            promise chaining
+        p.then(callback function(value){})
+        p.catch(callback function(error){})
+        p.then(callback function(value){} , callback function(error){})
+    best practice to execute asynchronous code (in background)
+
+
+async-await
+    used to work with promises
+    async
+        async function always returns promise
+        for promise chaining
+            for multiple p.then()
+            used if you want to do something after ending of execution of promise
+        for network call and calling async function
+    await
+        for network call or to convert into json
+        below code line will not execute until , current doesnot execute complately
+        let hM = await hydMosam;
+
+fetch API
+    to send / retrieve data over network
+    returns a promise
+    let content = fetch('url');
+    let content = fetch('url', options object for authentication / post-call);
+
+json
+    javascript object notation
+
+json formatter
+    for formatting json
+
+closures (IMP)
+    top level entity containing function and reference (not copy) of all data related / req for that function
+    for utilising the nested function outside the function
+
