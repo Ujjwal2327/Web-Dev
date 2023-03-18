@@ -1,11 +1,270 @@
-.current-tab{
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    min-height: 100vh;
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+    padding: 40px 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid white; */
+}
+
+h1 {
+    text-align: center;
+    text-transform:uppercase;
+    margin: 0 1rem;
+}
+
+.tabs {
+    width:90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    border-radius: 0.2rem;
+    margin-bottom: 4rem;
+}
+
+.tab.current-tab{
     background-color: rgba(219, 226, 239, 0.5);
-    border-radius: 4px;
+}
+
+.grant-location-access{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grant-location-access.active{
+    display: flex;
+}
+
+.grant-access-btn{
+    appearance: none;
+    border:none;
+    color: white;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+}
+
+.grant-location-access img{
+    margin-bottom: 2rem;
+    height: 5rem;
+}
+
+.grant-location-access h2{
+    font-size: 1.75rem;
+    font-weight: 600; 
+}
+
+.grant-location-access p{
+    font-size:0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+.loading{
+    display: none;
+}
+
+.loading img{
+    height: 8rem;
+}
+
+.loading p{
+    text-transform: uppercase;
 }
 
 
+.loading.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.active{
-    transform: scale(1);
-    
+.info{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid white; */
+    width: 100%;
+    max-width: 650px;
+}
+
+.info.active{
+    display: flex;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.city{
+    font-size:2rem;
+    font-weight:200;
+}
+
+.location img{
+    height: 1.5rem;
+}
+
+.desc-name{
+    font-size: 1.5rem;
+    font-weight:200;
+}
+
+.desc-icon{
+    height: 5.5rem;
+}
+
+.temperature{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.details{
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.detail{
+    min-width:30%;
+    max-width:200px;
+    background-color: rgba(219, 226, 239, 0.5);;
+    border-radius: 5px;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.detail img{
+    width: 3.5rem;
+}
+
+.detail p:first-of-type{
+    font-size: 1.15rem;
+    font-weight:600;
+    text-transform: uppercase;
+}
+
+.detail p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+
+.search-form{
+    display: none;
+    width:90%;
+    max-width:550px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; 
+    margin-bottom: 3rem;
+}
+
+.search-form.active{
+    display: flex;
+}
+
+.form-input{
+    all:unset;
+    width: calc(100% - 80px);
+    height:40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.form-input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-submit-btn{
+    border: none;
+    padding:unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-bottom:1px;
+    cursor: pointer;
+    background-color: var(--colorDark2);
+}
+
+.form-submit-btn img{
+    height: 20px;
+}
+
+.notFound{
+    display: none;
+    width: 80%;
+    max-width: 300px;
+}
+
+.notFound.active{
+    display: block;
+}
+
+@media screen and (max-width:486px){
+    .details{
+        flex-direction: column;
+    }
+
+    .detail{
+        width: 200px;
+        min-width: 70%;
+    }
 }

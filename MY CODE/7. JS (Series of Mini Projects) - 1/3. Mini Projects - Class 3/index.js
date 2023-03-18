@@ -1,7 +1,11 @@
 console.log('Hello Jee');
 
-const API_KEY = "d1845658f92b31c64bd94f06f7188c9c";
+// https://openweathermap.org/current
+// https://home.openweathermap.org/api_keys
+//  d743cd389f791d52185d5e3c94e449c6
+const API_KEY = "d743cd389f791d52185d5e3c94e449c6";
 
+// for updating UI
 function renderWeatherInfo(data){
     let newPara = document.createElement('p');
     newPara.textContent = `${data?.main?.temp.toFixed(2)} °C`;
@@ -16,12 +20,12 @@ async function fetchWeatherDetails(){
 
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
         const data = await response.json();
-        console.log("weather data-> " , data);
+        // console.log("weather data-> " , data);
 
         renderWeatherInfo(data);        // for updating UI
     }
     catch(e){
-        console.log("Errror Found" , err);
+        console.log("Errror Found- " , e);
     }
 }
 
@@ -32,8 +36,8 @@ async function getCustomWeatherDetails() {
     
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
         let data = await response.json();
-        console.log(data);
-        
+        // console.log(data);
+        renderWeatherInfo(data);
     }
     catch(err) {
         console.log("Errror Found Bro" , err);
@@ -43,19 +47,14 @@ async function getCustomWeatherDetails() {
 
 
 function getLocation(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else{
-        console.log('No Geolocation Support');
-    }
+    navigator.geolocation.getCurrentPosition((position)=>{
+        let lat = position.coords.latitude;
+        let longi = position.coords.longitude;
+        console.log(lat, longi);
+        console.log(position);
+    });
 }
 
-function showPosition(position){
-    let lat = position.coords.latitude;
-    let longi = position.coords.longitude;
-
-    console.log(lat, longi);
-}
-
+fetchWeatherDetails();
+getCustomWeatherDetails();
 getLocation();

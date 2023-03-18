@@ -4,101 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App | Ujjwal Maheshwari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- grant location -->
-    <!-- user location weatcher -->
-    <!-- search city weather location -->
-    <!-- loading gif -->
-
+    
     <div class="wrapper">
-        <h1>Weather App</h1>
-        
-        <!-- tab container -->
-        <div class="tab-container">
-            <div class="tab" data-userWeather>Your Weather</div>
-            <div class="tab" data-searchWeather>Search Weather</div>
-        </div>
+        <div class="container">
 
-        <!-- container -->
-        <div class="weather-container">
-            <!-- grant location -->
-            <div class="grant-location-container">
-                <img src="./assets/location.png" alt="" width="80" loading="lazy">
-                <p>Grant location access</p>
-                <p>Allow access to get weather information.</p>
-                <button class="btn" data-grantAccess>Grant Access</button>
+            <!-- heading -->
+            <h1>Weather App</h1>
+            <div class="tabs">
+                <div class="your-weather-tab tab">Your Weather</div>
+                <div class="search-weather-tab tab">Search Weather</div>
             </div>
 
-            <!-- search weather form -->
-            <form action="" class="form-container" data-searchForm>
-                <input type="text" placeholder="Search For City..." data-searchInput>
-                <button class="btn" type="submit">
-                    <img src="./assets/search.png" alt="" width="20" loading="lazy">
+            <!-- Grant Location Access -->
+            <div class="grant-location-access">
+                <img src="./assets/location.png" alt="">
+                <h2>Grant Location Access</h2>
+                <p>Allow Access to get weather Information</p>
+                <button class="grant-access-btn">Grant Access</button>
+            </div>
+
+            <!-- search form -->
+            <form class="search-form">
+                <input type="text" class="form-input">
+                <button type="submit" class="form-submit-btn">
+                    <img src="./assets/search.png" alt="">
                 </button>
             </form>
 
-            <!-- loading screen -->
-            <div class="loading-container">
-                <img src="./assets/loading.gif" alt="" width="150">
-                <p>Loading...</p>
+            <!-- loading -->
+            <div class="loading">
+                <img src="./assets/loading.gif" alt="" class="loading-img">
+                <p class="loading-para">Loading</p>
             </div>
 
-            <!-- show weather info -->
-            <div class="user-info-container">
-
-                <!-- city name and flag -->
-                <div class="name">
-                    <p data-cityName></p>
-                    <img src="" alt="" data-countryIcon>
+            <!-- weather-info -->
+            <div class="info">
+                <div class="location">
+                    <p class="city"></p>
+                    <img src="" alt="" class="country-icon">
                 </div>
 
-                <!-- weather description -->
-                <p data-weatherDesc></p>
-                
-                <!-- weather icon -->
-                <img src="" alt="" data-weatherIcon>
-                
-                <!-- temperature -->
-                <p data-temp></p>
-                
-                <!-- parameters -->
-                <div>
-                    <div class="parameter-container">
-                        <!-- card 1 -->
-                        <div class="parameter">
-                            <img src="./assets/wind.png" alt="">
-                            <p>windspeed</p>
-                            <p data-windSpeed></p>
-                        </div>
-                       
-                        <!-- card 2 -->
-                        <div class="parameter">
-                            <img src="./assets/humidity.png" alt="">
-                            <p>humidity</p>
-                            <p data-humidity></p>
-                        </div>
-                       
-                        <!-- card 3 -->
-                        <div class="parameter">
-                            <img src="./assets/cloud.png" alt="">
-                            <p>clouds</p>
-                            <p data-cloudiness></p>
-                        </div>
+                <p class="desc-name"></p>
+                <img src="" alt="" class="desc-icon">
 
+                <p class="temperature"></p>
+
+                <div class="details">
+
+                    <div class="windspeed detail">
+                        <img src="./assets/wind.png" alt="" class="windspeed-icon">
+                        <p>WINDSPEED</p>
+                        <p class="windspeed-value"></p>
                     </div>
+
+                    <div class="humidity detail">
+                        <img src="./assets/humidity.png" alt="" class="humidity-icon">
+                        <p>HUMIDITY</p>
+                        <p class="humidity-value"></p>
+                    </div>
+
+                    <div class="cloud detail">
+                        <img src="./assets/cloud.png" alt="" class="cloud-icon">
+                        <p>CLOUDS</p>
+                        <p class="cloud-value"></p>
+                    </div>
+
                 </div>
 
             </div>
+
+            <!-- not found -->
+            <img src="./assets/not-found.png" alt="" class="notFound">
 
         </div>
-
     </div>
-    
 
     <script src="index.js"></script>
+
 </body>
 </html>
