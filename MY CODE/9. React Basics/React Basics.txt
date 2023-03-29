@@ -5,9 +5,8 @@ react
     JUST KEEP IN MIND, DONT TELL THIS TO INTERVIEWER
         creating custom HTML element by this 
     js is based on imperative approach (have to tell eveything step by step in detail)
-    react is based on declarative approach, you have to tell only its end state
+    react is based on declarative approach (you have to tell only its end state)
     for SPA
-
 
 library
     segment of code having many functionalities that can be called by user
@@ -17,8 +16,9 @@ magicak line on react
 
 component
     reusable piece of code
-    fucntion king of thing
-    custom html element
+    fucntion kind of thing
+    JUST KEEP IN MIND, DONT TELL THIS TO INTERVIEWER
+        custom html element
 
 SPA
     single page application
@@ -30,7 +30,7 @@ react alternatives
 
 why react
     reusability
-    DRY donot repeat yourself
+    DRY do not repeat yourself
     readability
     seperation of concern
     mantainability
@@ -44,43 +44,45 @@ steps to initialise react
         vs code
         change a new folder ReactFolio
         change directory to ReactFolio
-        npx create-react-app demoapp        (no capital letter)
+        npx create-react-app demoapp        (no capital letter in folder name)
         change directory to demoapp
         npm start
-
     way 2
         create repl of rect javascript in replit
-
     way 3
         tailwind wala startup pack
             https://github.com/thepranaygupta/react-tailwind-css-starter-pack
-
+        npm install
+        npm start
 
 package.json
     has dependecies, scripts and versions
-    actual react library made by react and react-dom package
+    actual react library is created by react and react-dom package
 
 src
-    majority development you will do
+    majority development you will do here
     index.js
         first file that will execute when the html page loads
         react makes root by fetching element with id root
         render the App component
     App.js / App.jsx (js xml)
-        html code inside js
         what you want to show on UI
+        html code inside js
         return HTML code of UI
     index.css
         style for index.js
     
 public/index.html (div with id root) -> 
     src/index.js (convert root div into react root element ->
-        render the App component (div will be replaced by App component) ->
-            App.js (render code and return) and App.css
+        render the App component inside root element -> (div will be replaced by App component) ->
+            App.js / App.jsx (render code and return) and App.css
 
-react code (user friendly) -> converted by js engine  -> converted into browser friendly code
+render
+    updating UI
 
-here you are coding in js -> using className, not class, because class is reserved keyword
+react code (user friendly) -> converted by js engine (into browser friendly code)
+
+in react you are coding in js / jsx -> using className, not class, because class is reserved keyword
                                             className has same property as class in html file
 
 npm start
@@ -89,8 +91,407 @@ npm start
 make new component as a new file
     with every first letter of the word capital
 
-attributes are known as props (properties)
-by default content put inside component in App.js will not be visible, you have to use {props.children}
+all attributes combined are known as props (properties) send as parameter in function of component.js
+    used to send data in that component
+    to use att1
+        props.att1
+
+by default content put inside <component> content </component> in App.js will not be visible,
+        this thing can be use to hide elements
+    you have to use {props.children} inside that component.js to make it visible
 
 in return, return only one element (may be nested)
+
+App.js
+    import ItemDate from './components/ItemDate';
+    import Item from './components/Item';
+
+    function App(){
+        const itemName = "SurfExcel";
+
+        const response = [
+            { itemName:"Nirma", itemDate:20, itemMonth:"June", itemYear:1998},
+            { itemName:"Nirma2", itemDate:202, itemMonth:"June2", itemYear:19982}
+        ];
+
+        return (
+            <div>
+                <Item name={itemTwoName}>Hello Jee, ye props.children se replace ho jayega in Intem.js</Item>
+                <ItemDate day={response[0].itemDate} month={response[0].itemMonth} year={response[0].itemYear} ></ItemDate>
+            </div>
+        )
+    }
+
+    export default App;
+
+ItemDate.js
+    import './ItemDate.css'
+
+    function ItemDate(props){
+        const day = props.day;
+        const month = props.month;
+        const year = props.year;
+
+        return (
+            <div className='mfg-date'>
+                <span> {day} </span>
+                <span> {month} </span>
+                <span> {year} </span>
+            </div>
+        );
+    }
+
+    export default ItemDate;
+
+Item.js
+    import './Item.css'
+
+    function Item(props){
+        const itemName = props.name
+        const classes = 'card' + props.className;
+        return (
+            <div>
+                <p className="nirma" className={classes}> {itemName} </p>
+                {props.children}
+            </div>
+        );
+    }
+
+    export default Item;
+
+by default
+    css prop of nearest element apply on the given element
+in react
+    css prop of sbse bada parent element apply on the given element
+{props.className}
+    className = {'card' + props.className}
+    css prop of nearest element apply on the given element
+
+for eventlistener
+    onEvent = {function name}   as attribute
+    function name - eventHandler is a good practice
+    function must be declared inside main function
+
+useState
+    react hook
+        utility functions to do some different works
+    to update UI by updating variable values
+        and react re-renders the whole UI again
+    const [title, setTitle] = useState(initialize value);
+            returns an array of 2 elements
+                variable having value = initialize value
+                function for updating that value    (setter)
+        initially title = initialize value
+    setTitle(changed value);
+        to update variable as well as UI
+            now title = changed value
+            and update the UI
+    setTitle function is scheduled / time taking, not immediate / instant function
+        not changing variable value on the spot
+    state changes per component instance basis
+        changes only on the seperate component, in which we call it
+    why const?
+        so that only setTitle function can update this and no one else
+            cant be update using assignment operator too
+
+    for multiple states
+        1st way
+            use below way multiple times for individual variables
+                const [title, setTitle] = useState(initialize value);
+        2nd way
+            const [title, setTitle] = useState({
+                title: '',
+                date: ''
+            });
+
+
+    import React, {useState} from 'react';
+
+    Item(props){
+
+        const [title, setTitle] = useState(props.title);
+
+        function clickHandler(){
+            setTitle("Popcorn");
+        }
+
+        return{
+            <div onClick ={click} >{title} </div>
+        }
+
+    }
+
+    initially
+        title = props.title 
+    after click
+        title = "Popcorn"
+
+if element has no value
+    <element> </element> can be written as <element/>
+
+
+communicate from parent to child
+    pass props in child
+
+communicate from child to parent
+    pass props function in child
+        aHandler(obj){
+            console.log(obj);
+        }
+        <Item onA = {aHandler} > </Item>
+    call that props function in child
+        function Item(props){
+            obj1 = {titlt:"Babbar"};
+
+            function submitHandler(obj1){
+                console.log(onj1);
+                props.onA(obj1);        // function call
+            }
+            
+            return(
+                <button onSubmit = {submitHandler} > </button>
+            )
+        }
+    
+    flow
+        onA = {aHandler} ->
+            if we click on submit button
+                    onSubmit = {submitHandler}
+                        console.log(onj1)
+                        props.onA(obj1)     function call
+                    obj1 pass in aHandler function
+                aHandler(obj1) call
+                    console.log(obj1)
+
+
+npm install
+npm start
+
+
+function Card ({id, name, info, image, price, removeTour}){}
+
+
+
+
+useEffect hook
+    to do some task after rendering of component on UI
+    to manage side effect
+    to perform some additional task other than normal flow of component
+        that task is known as side effect
+    ex
+        changing DOM
+        modifying the state of a parent component
+        making an API call
+        modifying the browser history
+
+    start executing after completely rendering that particular component on which useEffect is applied
+    
+    useEffect(callback function)
+        execute after every render
+    
+    useEffect(callback function, empty dependency list / array / [])
+        execute after first render only
+    
+    useEffect(callback function, dependency list / array)
+        execute after first render and when value of dependency (variables in dependency list) changes
+    
+    useEffect((=>{
+        console.log('listener removed');    // this will execute later
+        return ()=>{
+            console.log('listener removed');    // this will execute former
+        }
+    }), dependency list)
+        to handle unmounting / cleaning of a component
+        to add new listener, first remove old listener
+
+component mount
+    component gets render or loaded
+    component added from DOM
+component unmount
+    component removes from DOM
+
+class-based components
+    no need to understand this
+
+toast
+    pop ups from right top of the window
+
+search npm react-toastify on google
+    to add toast in react
+    4 ways of using toasts
+        toast.warning()
+        toast.error()
+        toast.success()
+        toast()
+
+search npm react-icons on google
+    to add icons in react
+
+rface
+    emmet for creating component function structure
+
+builtin css spinner / loading site
+    https://www.cssportal.com/css-loader-generator/
+
+2 ways of using map
+cards.map((card)=>( <card key={card.id} /> ))
+cards.map((card)=>{ return <card key={card.id} /> })
+
+
+
+
+form
+    const [formData, setFormData] = useState({firstName:"", e_mail:""});
+    function changeHandler(event){
+        setTitle((prev)=>{ 
+            return{
+                ...prev,
+                [event.target.name] : event.target.value;
+            }
+        })
+    }
+
+    <form>
+        <input type="text" name="firstName" />
+        <input type="email" name="e_mail" />
+    </form>
+
+setTitle((prev)=>{ return newTitle })
+setTitle((prev)=>( newTitle ))
+
+controlled components
+    const [formData, setFormData] = useState({firstName:"", e_mail:"", isVisible:true, mode:"", favCar:""});
+    function changeHandler(event){
+        const {name, value, type , checked} = event.target;     // destructuring the event.target object
+        setTitle((prev)=>{ 
+            return{
+                ...prev,
+                // [event.target.name] : event.target.value;
+                // [name] : value;
+                [name] : type==="checkbox" ? checked : value;
+            }
+        })
+    }
+
+    function submitHandler(){
+        event.preventDefault();     // now form data will not be removed
+        console.log(formData);
+    }
+
+    <form onSubmit={submitHandler}>
+        <input onchange={changeHandler} type="text" name="firstName" />
+        <input onchange={changeHandler} type="email" name="e_mail" />
+        <input onchange={changeHandler} type="text" name="firstName" value={formData.firstName} />
+        <input onchange={changeHandler} type="email" name="e_mail" value={formData.e_mail} />
+        <input onchange={changeHandler} type="checkbox" name="isVisible" checked={formData.isVisible} />
+
+        <fieldset>
+            <legend>Mode</legend>
+            <input onchange={changeHandler} type="radio" name="mode" value="Online-Mode" checked={formData.mode === "Online-Mode"} />
+                // checked={formData.mode === "Online-Mode"} is optional
+            <input onchange={changeHandler} type="radio" name="mode" value="Offine-Mode" checked={formData.mode === "Offine-Mode"} />
+        </fieldset>
+
+        <select onchange={changeHandler} name="favCar" value={formData.favCar} >
+            <option value="audi"> audi </option>
+            <option value="bmw"> bmw </option>
+            <option value="jaguar"> jaguar </option>
+            <option value="tesla"> tesla </option>
+        </select>
+
+        <input type="submit" value"submit this form" />
+        <button> submit this form </button>
+    </form>
+
+for in html -> htmlFor in react
+
+checked has 2 values true and false
+
+<fieldset> </fieldset>      for grouping multiple form elements (especially radio buttons)
+<legend> Caption for fieldset tag </legend>
+
+by default type attribute of <button></button> in form is "submit"
+by default by clicking on submit button used in form,
+    all data in form will be wiped out / removed
+    onSubmit event triggers on <form></form> tag
+
+attributes/props used in form elements
+    type, name, id, placeholder, value, onchange=(changeHandler)
+
+
+
+react router
+    framework used to navigate / move between multiple pages without refreshing the page
+    SPA
+    to make pseudo multiple page application
+    load different components on a same page according to need
+    npm install react-router-dom
+
+browser router tag
+    
+    index.js
+        import { BrowserRouter } from 'react-router-dom';
+
+        <BrowserRouter>     // to link routes / paths with browser     teach browser about routes
+            <App/>
+        </BrowserRouter>
+    
+    now App is ready for routing
+        routing
+            to take the needed route
+
+    App.js
+        import {Route, Routes} from 'react-router-dom';
+
+
+
+        <Routes>        // write / declare all routes here
+            <Route path="/path1" element={component1} />        //(by default)     if path is path1, render component1
+            <Route path="/path2" element={component2} />
+            <Route path="/path3" element={component3} />        // this will work
+            <Route path="/path4" element={component3} />        // this will not work 
+            <Route path="*" element={component4} />             // path other than path1, path2, path3, render component4
+        </Routes>
+    
+        // Route with path = '/' will be at homepage
+
+
+import {Link} from 'react-router-dom';
+<a href="url"></a> in html -> <Link to="url"></Link> tag in react
+
+import {NavLink} from 'react-router-dom';
+<NavLink to="url"></NavLink>
+    puts active class on the link where Route's path=url
+    used to know which element is clicked in routes
+
+
+
+
+nested routing
+        <Routes>
+            <Route path="/" element={<Home />} >      // by default inner Route will not render
+                <Route index element={component1} />        // this is default Route
+                <Route path='/path2' element={component2} />
+                <Route path='/path3' element={component3} />   
+                <Route path='/path4' element={component3} />        
+                <Route path='*' element={component4} />             
+            </Route>       
+        </Routes>
+
+        Home.js
+            <Outlet />      // to give permission to child route to render them too
+        
+
+useNavigate hook
+    to navigate on different different Routes
+    import {useNavigate} from 'react-router-dom';
+    2 ways
+        useNavigate('path')
+
+        const navigate=useNavigate()
+        navigate('path')
+    
+    navigate(-1)
+        to go back to previous page / component
+
 

@@ -322,3 +322,18 @@ shadow in indicator
 REACT BASICS - CLASS 1
 props.className
     to use css of child component
+
+REACT BASICS - CLASS 2
+why const in useState
+setTitle function is immediate or scheduled function
+
+REACT BASICS - CLASS 4
+make a project to update window size on UI
+
+
+
+REACT INTERMEDIATE - CLASS 1
+homework form
+
+REACT INTERMEDIATE - CLASS 2
+difference between index and path = '*'
