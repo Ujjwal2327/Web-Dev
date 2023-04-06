@@ -12,7 +12,7 @@ library
     segment of code having many functionalities that can be called by user
 
 magicak line on react
-    react is all about components (function act the end)
+    react is all about Components (function act the end) and States
 
 component
     reusable piece of code
@@ -42,8 +42,7 @@ steps to initialise react
     way 1
         install node js
         vs code
-        change a new folder ReactFolio
-        change directory to ReactFolio
+        change directory to folder
         npx create-react-app demoapp        (no capital letter in folder name)
         change directory to demoapp
         npm start
@@ -231,9 +230,11 @@ if element has no value
 
 
 communicate from parent to child
+    prop drilling
     pass props in child
 
 communicate from child to parent
+    state lifting / lifting up
     pass props function in child
         aHandler(obj){
             console.log(obj);
@@ -295,7 +296,7 @@ useEffect hook
     useEffect(callback function, dependency list / array)
         execute after first render and when value of dependency (variables in dependency list) changes
     
-    useEffect((=>{
+    useEffect(()=>{
         console.log('listener removed');    // this will execute later
         return ()=>{
             console.log('listener removed');    // this will execute former
@@ -316,8 +317,10 @@ class-based components
 toast
     pop ups from right top of the window
 
-search npm react-toastify on google
+search npm react-toastify or react hot toast on google
     to add toast in react
+    https://www.npmjs.com/package/react-toastify
+    https://react-hot-toast.com/docs
     4 ways of using toasts
         toast.warning()
         toast.error()
@@ -325,7 +328,9 @@ search npm react-toastify on google
         toast()
 
 search npm react-icons on google
+    https://react-icons.github.io/react-icons
     to add icons in react
+    import {FcGoogle} from 'react-icons/fc'
 
 rface
     emmet for creating component function structure
@@ -415,8 +420,8 @@ by default by clicking on submit button used in form,
     all data in form will be wiped out / removed
     onSubmit event triggers on <form></form> tag
 
-attributes/props used in form elements
-    type, name, id, placeholder, value, onchange=(changeHandler)
+attributes / props used in form elements
+    type, name, id, placeholder, value, onchange=(changeHandler), required
 
 
 
@@ -442,7 +447,6 @@ browser router tag
 
     App.js
         import {Route, Routes} from 'react-router-dom';
-
 
 
         <Routes>        // write / declare all routes here
@@ -484,14 +488,217 @@ nested routing
 
 useNavigate hook
     to navigate on different different Routes
-    import {useNavigate} from 'react-router-dom';
+    import {useNavigate, Navigate} from 'react-router-dom';
     2 ways
-        useNavigate('path')
+        const navigate = useNavigate();
+        navigate('path');
 
-        const navigate=useNavigate()
-        navigate('path')
+        return (<Navigate to='path' />)
     
     navigate(-1)
         to go back to previous page / component
 
+HTML (structure) -> JS (functionality) -> CSS (appearence)
 
+for API call
+    npm i axios
+        for API call
+        more secure than fetch API call
+
+        import axios from 'axios';
+
+        const {data} = await axios.get(url);
+            returns promise same as fetch API
+                
+    .env file
+        key_name = 'apikey'
+        to store API key
+        restart the app again
+
+    to access
+        const API_KEY = process.env.key_name
+
+custom hook
+    why
+        to reduce the code of duplicate logical things / functions in various files / components
+    start with use
+        useGif
+    it is nothing but a new file having only functionality
+
+
+
+context API
+    for state management
+    context
+        snapshot of data that you want to use, access, change    (not deep dive in exact meaning of snapshot)
+    API
+        to do certain work
+    sol for complex prop drilling and state lifting situations
+    creating a CENTRALISED data in parent so that ANY descendent component can access data DIRECTLY
+
+    increase performance, reduce redundancy, easy
+    all descendents of the tag that has access to that context have also access to that context
+
+rules of context API
+    1. create context
+        AppContext.js
+            export const AppContext = createContext();
+
+    2. provide context
+        AppContext.js
+            export default function AppContextProvider({children}){
+                // create all states and methods come here
+                
+                // create object containing all states and methods
+                
+                return (
+                    <AppContext.Provider value={objectName} >
+                        {children}
+                    </AppContext.Provider>
+                )
+            }
+        index.js
+            import {AppContextProvider} from 'path'
+            <AppContextProvider>    // to link Context with react component
+                <App />     // wherever you want to use that context
+            </AppContextProvider>
+
+    3. consume context / useContext hook
+        // where you want to use that context
+        import {AppContext} from 'path'
+        const {page, loading} = useContext(AppContext)
+
+https://codehelp-blogs-context-1.netlify.app/
+
+
+to apply CSS, we have to apply App.css in App.js
+
+
+baseUrl/march/pics?tag=friends&time=night
+
+const [searchParam, setSearchParam] = useSearchParam();
+    talking about '?tag=friends&time=night'
+    searchParam
+        to ACCESS query parameters from path
+    setSearchParam
+        to UPDATE query parameters in path
+
+const location = useLocation();
+    talking about '/march/pics'
+    location.pathname
+        returns path of URL (excluding baseUrl)
+    location.search
+        to WRITE search query after location.pathname
+
+
+to remove warning of empty dependecy list in useEffect
+    write below line as it is (with //)
+        // eslint-disable-next-line
+
+
+
+
+
+
+
+
+
+Redux
+    for state management
+    has globle state as with Context API
+    has diff diff slices and those slices have 
+    centralised globle data that is made up by combination of slice (single/multiple)
+        slice
+            portion of data
+            to create a slice you have to tell 3 things
+                name of slice
+                initial state of slice
+                reducer for slice
+                    functionality is known as reducer
+
+we will use Redux toolkit
+    https://redux-toolkit.js.org/tutorials/quick-start
+    npm install
+    npm install @reduxjs/toolkit react-redux
+    npm start
+
+Step 1    createSlice
+    to create a slice
+    takes an object of 3 parameters
+        naming, initialize, object containing functions
+
+    CounterSlice.js
+        const { createSlice } = require("@reduxjs/toolkit");
+
+        const initialState = {
+            value : 0
+        }
+
+        export const CounterSlice = createSlice({
+            name : 'counter',
+            initialState,
+            reducers : {
+                increament : (state)=>{
+                    state.value += 1;
+                },
+                decreament : (state)=>{
+                    state.value -= 1;
+                }
+            }
+        })
+
+        export const {increament, decreament} = CounterSlice.actions;
+        export default CounterSlice.reducer;
+
+
+    action creater
+        action creaters are generated for each reducer functions
+        to fetch implementation of function of slice, outside slice
+        SliceName.actions
+        returns an object
+
+    reducer
+        SliceName.reducer
+        contains definitions of functions of Slice
+
+
+Step 2    configureStore()
+    to make redux centralised global store
+    to list all slices in it (as store is combination of slice)
+    
+    store.js
+        import { configureStore } from '@reduxjs/toolkit'
+        import { CounterSlice } from './slices/CounterSlice'
+
+        export const store = configureStore({
+        reducer: {
+            // SliceName.name : SliceName
+            counter : CounterSlice
+        },
+        })
+    
+
+Step 3     wrap with <Provider></Provider>
+    to link redux code with react component (App here)
+    <Provider store={store} >
+        <App />
+    </Provider>
+
+
+Step 4    access state and functions from slice
+    useSelector hook
+        useSelector((state)=>(state.whichState.value))
+    const count = useSelector((state)=>(state.counter.value));
+
+    useDispatch() hook
+        dispatch(sliceFunction call)
+    const dispatch = useDispatch();
+    dispatch(increament());
+
+
+hierarchy
+    <BrowserRouter>
+        <Provider>
+            <App/>
+        </Provider>
+    </BrowserRouter>

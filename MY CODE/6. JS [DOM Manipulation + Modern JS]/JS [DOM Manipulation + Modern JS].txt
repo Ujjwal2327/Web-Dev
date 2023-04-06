@@ -370,8 +370,9 @@ async-await
 fetch API
     to send / retrieve data over network
     returns a promise
-    let content = fetch('url');
-    let content = fetch('url', options object for authentication / post-call);
+    const content = fetch('url');
+    const content = fetch('url', options object for authentication / post-call);
+    const data = content.json()
 
 json
     javascript object notation

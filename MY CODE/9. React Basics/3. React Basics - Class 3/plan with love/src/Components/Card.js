@@ -4,7 +4,7 @@ function Card ({id, name, info, image, price, removeTour}){
 
     const [readMore, setReadMore] = useState(true);
     
-    const desc = readMore ? `${info.substring(0,200)}.....` : info;
+    const desc = readMore ? `${info.substring(0,190)}.....` : info;
 
     function readMoreHandler(){
         setReadMore(!readMore);       
